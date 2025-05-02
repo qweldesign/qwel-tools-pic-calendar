@@ -1,0 +1,19 @@
+{
+  "name": "qwel-tools-pic-calendar",
+  "version": "1.0",
+  "description": "",
+  "main": "init.js",
+  "scripts": {
+    "webpack": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taigoito/qwel-tools-pic-calendar.git"
+  },
+  "author": "Taigo Ito",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/taigoito/qwel-tools-pic-calendar/issues"
+  },
+  "homepage": "https://github.com/taigoito/qwel-tools-pic-calendar#readme"
+}

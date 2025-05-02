@@ -1,4 +1,11 @@
 <?php
+/**
+ * API.php
+ * このファイルは QWEL Project の一部です。
+ * Part of the QWEL Project © QWEL.DESIGN 2025
+ * Licensed under GPL v3 – see https://qwel.design/
+ */
+
 include_once('./functions.php');
 
 $file = '../status.sqlite';
@@ -18,9 +25,9 @@ if ($method === 'fetch') {
 
 } else {
   // リファラ確認
-  //$referer = $_SERVER['HTTP_REFERER'];
-  //$url = parse_url($referer);
-  //if (!stristr($url['host'], 'qwel.design')) return;
+  $referer = $_SERVER['HTTP_REFERER'];
+  $url = parse_url($referer);
+  if (!stristr($url['host'], 'tools.qwel.design')) return;
 
   // ステータスの挿入
   if ($method === 'insert') {
