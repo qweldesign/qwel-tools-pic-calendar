@@ -115,6 +115,10 @@ $calendarUnit: clamp(#{$calendarMin}, 12vw, #{$calendarMax});
     margin: 0 auto;
     border-radius: 6px;
     background-color: rgba(255, 255, 255, 0.85);
+    color: $bodyColor;
+    //white-space: nowrap;
+    //text-overflow: ellipsis;
+    //overflow: hidden;
   }
 
   &:not(.--startOnMon) {

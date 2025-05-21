@@ -150,6 +150,7 @@ button, input, select, textarea {
   margin: 0 auto;
   border-radius: 6px;
   background-color: rgba(255, 255, 255, 0.85);
+  color: #333333;
 }
 .calendar:not(.--startOnMon) th:first-child, .calendar:not(.--startOnMon) td:first-child {
   color: red;

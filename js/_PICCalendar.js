@@ -4,7 +4,7 @@
  * Location: Fukui, Japan
  */
 
-import Calendar from './_calendar.js';
+import Schedule from './_schedule.js';
 
 // データベース上'0'は担当者未定
 // よって、PICList[index - 1]にて担当者を表示
@@ -21,12 +21,12 @@ const PICList = [
   '谷口'
 ]
 
-export default class PICCalendar extends Calendar {
+export default class PICCalendar extends Schedule {
   async makeCalendar(year, month) {
     super.makeCalendar(year, month);
 
     // データを取得して、状態値を反映
-    const url = this.options.url;
+    const url = this.options.url2;
     const res = await fetch(`${url}php/api.php?method=fetch&year=${year}&month=${month + 1}`);
     let data = await res.json();
 
@@ -139,7 +139,7 @@ export default class PICCalendar extends Calendar {
       const date = new Date(ed.dataset.date);
       if (date < this.today) {
         // データの更新をPUT
-        const url = this.options.url;
+        const url = this.options.url2;
         const date = ed.dataset.date;
         const state = ed.dataset.state;
         const pic = ed.dataset.pic;
@@ -243,7 +243,7 @@ export default class PICCalendar extends Calendar {
     }
 
     // データの更新をPUT
-    const url = this.options.url;
+    const url = this.options.url2;
 
     if (date) {
       const postData = new FormData;
