@@ -4,7 +4,7 @@
  * Location: Fukui, Japan
  */
 
-import Calendar from './_calendar.js';
+import Calendar from './calendar.js';
 
 export default class Schedule extends Calendar {
   makeCalendar(year, month) {
