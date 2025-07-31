@@ -22,11 +22,11 @@
   --color--lightest: #ffffff;
   --color--lightest--active: #cccccc;
   --color--primary: #209fdf;
-  --color--primary--active: #79c5ec;
+  --color--primary--active: rgb(121.2, 197.4, 235.8);
   --color--secondary: #ffc080;
-  --color--secondary--active: #ff8d1a;
+  --color--secondary--active: rgb(255, 141.4015748031, 26);
   --color--tertiary: #9fdf20;
-  --color--tertiary--active: #5f8613;
+  --color--tertiary--active: rgb(95.4, 133.8, 19.2);
   --container-width--sm: 37.5rem;
   --container-width--md: 56.25rem;
   --container-width--lg: 75rem;
@@ -462,8 +462,14 @@ button, input, select, textarea {
   border-inline-end: 1px solid #999999;
 }
 .calendar__cell {
+  height: calc(clamp(3rem, 12vw, 6rem) * 3 / 4);
   font-size: min(3.6vw, 87.5%);
   vertical-align: baseline;
+}
+@media (max-width: 599.9px) {
+  .calendar__cell {
+    height: 10.5svh;
+  }
 }
 .calendar__cell.--done {
   opacity: 0.7;
@@ -483,6 +489,7 @@ button, input, select, textarea {
   margin: 0 auto;
   border-radius: 6px;
   background-color: rgba(255, 255, 255, 0.85);
+  color: var(--color--darkest);
 }
 .calendar:not(.--startOnMon) th:first-child, .calendar:not(.--startOnMon) td:first-child {
   color: red;
@@ -517,4 +524,9 @@ button, input, select, textarea {
 }
 .calendar__save:not(.--inactive):hover {
   opacity: 0.7;
+}
+.calendar__description {
+  padding: 2.25rem;
+  font-size: min(3.6vw, 16px);
+  text-align: justify;
 }

@@ -83,8 +83,13 @@ $calendar-unit:  clamp(#{$calendar-min}, 12vw, #{$calendar-max});
   }
 
   &__cell {
+    height: calc(#{$calendar-unit} * 3 / 4);
     font-size: min(3.6vw, 87.5%);
     vertical-align: baseline;
+
+    @media (max-width: 599.9px) {
+      height: 10.5svh;
+    }
 
     &.--done {
       opacity: 0.7;
@@ -109,6 +114,10 @@ $calendar-unit:  clamp(#{$calendar-min}, 12vw, #{$calendar-max});
     margin: 0 auto;
     border-radius: 6px;
     background-color: rgba(255, 255, 255, 0.85);
+    color: $body-color;
+    //white-space: nowrap;
+    //text-overflow: ellipsis;
+    //overflow: hidden;
   }
 
   &:not(.--startOnMon) {
@@ -158,5 +167,11 @@ $calendar-unit:  clamp(#{$calendar-min}, 12vw, #{$calendar-max});
         opacity: 0.7;
       }
     }
+  }
+
+  &__description {
+    padding: 2.25rem;
+    font-size: min(3.6vw, 16px);
+    text-align: justify;
   }
 }

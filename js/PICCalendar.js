@@ -5,7 +5,7 @@
  * Licensed under GPL v3 – see https://qwel.design/
  */
 
-import Calendar from './calendar.js';
+import Schedule from './schedule.js';
 
 // データベース上'0'は担当者未定
 // よって、PICList[index - 1]にて担当者を表示
@@ -22,12 +22,12 @@ const PICList = [
   '谷口'
 ]
 
-export default class PICCalendar extends Calendar {
+export default class PICCalendar extends Schedule {
   async makeCalendar(year, month) {
     super.makeCalendar(year, month);
 
     // データを取得して、状態値を反映
-    const url = this.options.url;
+    const url = this.options.url2;
     const res = await fetch(`${url}php/api.php?method=fetch&year=${year}&month=${month + 1}`);
     let data = await res.json();
 
@@ -118,7 +118,7 @@ export default class PICCalendar extends Calendar {
   _initPIC() {
     this._getData();
     this._setPIC(true);
-    //this._saveData();
+    this._saveData();
   }
 
   // 最終保存日と最終担当者を取得
@@ -140,7 +140,7 @@ export default class PICCalendar extends Calendar {
       const date = new Date(ed.dataset.date);
       if (date < this.today) {
         // データの更新をPUT
-        const url = this.options.url;
+        const url = this.options.url2;
         const date = ed.dataset.date;
         const state = ed.dataset.state;
         const pic = ed.dataset.pic;
@@ -244,7 +244,7 @@ export default class PICCalendar extends Calendar {
     }
 
     // データの更新をPUT
-    const url = this.options.url;
+    const url = this.options.url2;
 
     if (date) {
       const postData = new FormData;

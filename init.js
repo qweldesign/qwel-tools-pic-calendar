@@ -22,4 +22,7 @@ new AutoCopyright(2019, 'QWEL.DESIGN');
 
 import PICCalendar from './js/PICCalendar.js';
 
-new PICCalendar({url: 'https://tools.qwel.design/pic-calendar/'});
+new PICCalendar({
+  url1: 'https://www.googleapis.com/calendar/v3/calendars/judo.kunimi@gmail.com/events?key=AIzaSyCzV_fotoaP1uy5WBuud7CYjJCqi9Ct4-c',
+  url2: 'https://tools.qwel.design/pic-calendar/'
+});
