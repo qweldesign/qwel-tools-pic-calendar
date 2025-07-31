@@ -8,18 +8,29 @@
 import Schedule from './schedule.js';
 
 // データベース上'0'は担当者未定
-// よって、PICList[index - 1]にて担当者を表示
+// よって、NameList[index - 1]にて担当者を表示
+const NameList = [
+  '岩城', // 1
+  '長谷川', // 2
+  '林', // 3
+  '出見', // 4
+  '高橋', // 5
+  '西村', // 6
+  '前田', // 7
+  '伊藤', // 8
+  '近村', // 9
+  '谷口'  // 10
+]
+
 const PICList = [
-  '岩城',
-  '長谷川',
-  '林',
-  '出見',
-  '高橋',
-  '西村',
-  '前田',
-  '伊藤',
-  '近村',
-  '谷口'
+  1,
+  2,
+  4,
+  5,
+  6,
+  8,
+  9,
+  10
 ]
 
 export default class PICCalendar extends Schedule {
@@ -111,7 +122,12 @@ export default class PICCalendar extends Schedule {
     target.dataset.pic = pic;
     target.dataset.isSaved = isSaved;
     const value = target.querySelector('.calendar__value');
-    value.textContent = PICList[pic - 1];
+    if (isSaved) {
+      value.textContent = NameList[pic - 1];
+    } else {
+      pic = (pic + PICList.length) % PICList.length;
+      value.textContent = NameList[PICList[pic] - 1];
+    }
   }
 
   // データの初期化
@@ -175,6 +191,10 @@ export default class PICCalendar extends Schedule {
 
   _getStartPIC() {
     let pic = this.latestPIC;
+    // PICListのインデックスを探す
+    PICList.forEach((PICIndex, i) => {
+      if (pic == PICIndex) pic = i;
+    });
     const len = PICList.length;
     const diff = (this.latestDate.getFullYear() < this.year) ? 12 : 0; 
     const latestMonth = this.latestDate.getMonth();
