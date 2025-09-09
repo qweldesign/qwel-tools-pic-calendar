@@ -10,16 +10,13 @@ import Schedule from './schedule.js';
 // データベース上'0'は担当者未定
 // よって、PICList[index - 1]にて担当者を表示
 const PICList = [
-  '岩城',
-  '長谷川',
-  '林',
-  '出見',
-  '高橋',
   '西村',
-  '前田',
   '伊藤',
   '近村',
-  '谷口'
+  '岩城',
+  '長谷川',
+  '出見',
+  '高橋',
 ]
 
 export default class PICCalendar extends Schedule {
@@ -123,7 +120,7 @@ export default class PICCalendar extends Schedule {
 
   // 最終保存日と最終担当者を取得
   _getData() {
-    this.latestDate = new Date('2025-03-01');
+    this.latestDate = new Date('2025-09-01');
     this.latestPIC = 1; // 実際の上記日付の次回担当者
     this.data.forEach((dt) => {
       if (dt.pic > 0 && this.latestDate < new Date(dt.date)) {

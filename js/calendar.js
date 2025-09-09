@@ -122,7 +122,7 @@ export default class Calendar {
       this._prevText.textContent = `${prevYear}${joint}${this._months[prevMonth]}`;
 
       // 2025年2月以前に遡ることは不可
-      if (year == 2025 && month == 2) {
+      if (year == 2025 && month == 8) {
         this._prev.classList.add('--inactive');
       } else {
         this._prev.classList.remove('--inactive');
