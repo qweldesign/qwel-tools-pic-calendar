@@ -2,30 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PIC Calendar | QWEL in Action</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Noto+Sans:wght@100..900&family=Noto+Serif:wght@100..900&display=swap" rel="stylesheet">
+    <title>柔道クラブ当番管理</title>
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <header class="header">
-      <h1 id="logo"><a href="https://qwel.design/"><img src="./logo_animation.svg" alt="QWEL in Action"></a></h1>
-      <ul class="breadcrumb">
-        <li class="breadcrumb__item"><a href="https://qwel.design/">QWEL in Action</a></li>
-        <li class="breadcrumb__item"><a href="../">Creative Tools</a></li>
-        <li class="breadcrumb__item  breadcrumb__item--current"><span>PIC Calendar</span></li>
-      </ul>
-    </header>
-    <main class="main">
-      <h2 class="main__title">PIC | Created by <span> ― QWEL.DESIGN</span></h2>
-      <ul class="main__list">
-        <li class="main__listItem--spec">お当番さんカレンダー</li>
-        <li class="main__listItem--spec">曜日などが不定期で順番に回ってくるタスクの担当管理システム</li>
-        <li class="main__listItem--spec">日付の予定有り/無しを切り替えるだけで、自動で順番にお当番さんが割り振られる</li>
-        <li class="main__listItem--spec">会員の入れ替えにはコードを修正する必要あり</li>
-      </ul>
+    <main>
       <div id="calendar" class="calendar">
         <div class="calendar__mode">
           <label>編集用パスワード<input type="password" maxlength="6"></label>
@@ -41,25 +24,17 @@
             <tbody class="calendar__body"></tbody>
           </table>
         </div>
+        <ul class="calendar__description">
+          <li>編集用パスワードを入力すると、練習日を編集できます。</li>
+          <li>日付をタップすると、練習の有り(緑)・無し(黄)を切り替えできます。</li>
+          <li>練習の有り・無しを切り替えると、自動でその日以降のお掃除当番が変更されます。</li>
+          <li>お掃除当番は順番に従って入力され、細かい調整はできません（誰かと誰かを入れ替える等）。</li>
+          <li>過去の日付は操作できません (色が薄くなっているところ)。</li>
+          <li>会員が増減した場合は、伊藤の方でコードを少し修正する必要があります。</li>
+          <li>自動保存です。操作の履歴は全て保存されます。</li>
+        </ul>
       </div>
     </main>
-    <footer id="footer" class="footer">
-      <div class="footer__inner">
-        <a class="footer__item footer__item--github" href="https://github.com/qweldesign" target="_blank" rel="noopener">
-          <svg class="icon icon--si icon--github icon--md" width="36" height="36" aria-hidden="true">
-            <use href="./icons.svg#si-github"></use>
-          </svg>
-          <span>GitHub</span>
-        </a>
-        <a class="footer__item footer__item--contact" href="https://tools.qwel.design/contact-form/" target="_blank" rel="noopener">
-          <svg class="icon icon--si icon--mail icon--md" width="36" height="36" aria-hidden="true">
-            <use href="./icons.svg#si-mail"></use>
-          </svg>
-          <span>Contact Me</span>
-        </a>
-        <small class="footer__copyright"></small>
-      </div>
-    </footer>
     <script src="./init.js" type="module"></script>
   </body>
 </html>

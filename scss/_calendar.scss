@@ -1,21 +1,22 @@
 /**
  * Calendar
  */
-$calendar-min:   3rem;
-$calendar-max:   6rem;
-$calendar-unit:  clamp(#{$calendar-min}, 12vw, #{$calendar-max});
+$calendarMin:  3rem;
+$calendarMax:  6rem;
+$calendarUnit: clamp(#{$calendarMin}, 12vw, #{$calendarMax});
 
 .calendar {
-  width: min(100%, #{$calendar-max * 7});
+  width: min(100%, #{$calendarMax * 7});
   margin: 3rem auto;
-  padding-block-end: 1.5rem;
+  padding-bottom: 1.5rem;
 
   &.--editMode {
     background: rgba(128, 255, 255, .3);
   }
 
   &__mode {
-    margin-block-end: 0.75rem;
+    margin-right: 1.5rem;
+    margin-bottom: 0.75rem;
     text-align: right;
 
     label {
@@ -25,7 +26,7 @@ $calendar-unit:  clamp(#{$calendar-min}, 12vw, #{$calendar-max});
     input {
       width: 6rem;
       height: 1.5rem;
-      margin-inline-end: 0.5rem;
+      margin-left: 0.5rem;
     }
   }
 
@@ -35,7 +36,7 @@ $calendar-unit:  clamp(#{$calendar-min}, 12vw, #{$calendar-max});
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-block-end: 0.75rem;
+    margin-bottom: 0.75rem;
   }
 
   &__prev, &__next {
@@ -51,39 +52,39 @@ $calendar-unit:  clamp(#{$calendar-min}, 12vw, #{$calendar-max});
   }
 
   &__wrap {
-    width: min(100%, #{$calendar-max * 7});
+    width: min(100%, #{$calendarMax * 7});
     margin: 0 auto;
     overflow: auto;
   }
 
   &__view {
-    width: calc(#{$calendar-unit} * 7);
+    width: calc(#{$calendarUnit} * 7);
     border-collapse: collapse;
     border-spacing: 0;
     margin: 0 auto;
 
     tr {
-      border-block-end: 1px solid #999999;
+      border-bottom: 1px solid #999999;
 
       &:first-child {
-        border-block-start: 1px solid #999999;
+        border-top: 1px solid #999999;
       }
     }
 
     th, td {
-      width: $calendar-unit;
-      height: calc(#{$calendar-unit} * 3 / 4);
-      border-inline-start: 1px solid #999999;
+      width: $calendarUnit;
+      //height: calc(#{$calendarUnit} * 3 / 4);
+      border-right: 1px solid #999999;
       text-align: center;
 
       &:first-child {
-        border-inline-end: 1px solid #999999;
+        border-left: 1px solid #999999;
       }
     }
   }
 
   &__cell {
-    height: calc(#{$calendar-unit} * 3 / 4);
+    height: calc(#{$calendarUnit} * 3 / 4);
     font-size: min(3.6vw, 87.5%);
     vertical-align: baseline;
 
@@ -114,7 +115,7 @@ $calendar-unit:  clamp(#{$calendar-min}, 12vw, #{$calendar-max});
     margin: 0 auto;
     border-radius: 6px;
     background-color: rgba(255, 255, 255, 0.85);
-    color: $body-color;
+    color: $bodyColor;
     //white-space: nowrap;
     //text-overflow: ellipsis;
     //overflow: hidden;
